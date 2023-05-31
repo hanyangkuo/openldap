@@ -22,3 +22,7 @@ slaptest -f /opt/bitnami/openldap/etc/slapd.conf -F /opt/bitnami/openldap/etc/sl
 
 ldapsearch -b "dc=example,dc=com" -H ldap://127.0.0.1:1389 -D "cn=admin,dc=example,dc=com" -x -W adminpassword
 ldapsearch -b -H ldap://localhost:1389 "dc=example,dc=com" -D "cn=admin,dc=example,dc=com" -x -w secret
+ldappasswd -H ldap://127.0.0.1:1389 -D "cn=admin,dc=example,dc=com" -x -W -S cn=customuser,ou=users,dc=example,dc=com
+
+
+https://linux.die.net/man/5/slapd-config
