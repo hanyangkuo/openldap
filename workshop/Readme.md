@@ -73,5 +73,5 @@ adminpassword
 
 ### Change Password
 
-`ldappasswd -s welcome123 -W -D "cn=admin,dc=example,dc=com" -x "cn=hykuop,ou=users,dc=example,dc=com" -H ldap://127.0.0.1:1389`
+`ldappasswd -s welcome123 -W -D "cn=admin,dc=example,dc=com" -x "cn=adam,ou=users,dc=example,dc=com" -H ldap://127.0.0.1:1389`
 adminpassword
