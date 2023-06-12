@@ -1,0 +1,14 @@
+# AUTO-GENERATED FILE - DO NOT EDIT!! Use ldapmodify.
+# CRC32 7c0346c8
+dn: cn=module{0}
+objectClass: olcModuleList
+cn: module{0}
+olcModuleLoad: {0}/opt/bitnami/openldap/lib/openldap/argon2.so m=65536 t=5 p=8
+olcModuleLoad: {1}/opt/bitnami/openldap/lib/openldap/ppolicy.so
+structuralObjectClass: olcModuleList
+entryUUID: a701c742-9d86-103d-8809-cbbc8c2dbe11
+creatorsName: cn=config
+createTimestamp: 20230612160510Z
+entryCSN: 20230612160510.744005Z#000000#000#000000
+modifiersName: cn=config
+modifyTimestamp: 20230612160510Z

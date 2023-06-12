@@ -1,0 +1,27 @@
+version: '2'
+
+networks:
+  my-network:
+    driver: bridge
+services:
+  openldap:
+    container_name: openldap
+    # image: bitnami/openldap:2.6.4-debian-11-r36
+    image: hykuo13104991/openldap:2.6.4-debian-11-r36
+    ports:
+      - '1389:1389'
+      - '1636:1636'
+    environment:
+      - LDAP_DOMAIN=example.com
+      - LDAP_ROOT=dc=example,dc=com
+      - LDAP_ADMIN_USERNAME=admin
+      - LDAP_ADMIN_PASSWORD=adminpassword
+      - LDAP_USERS=user01,user02
+      - LDAP_PASSWORDS=password1,password2
+    networks:
+      - my-network
+    volumes:
+      - './openldap_data:/bitnami/openldap'
+# volumes:
+#   openldap_data: ./
+#     driver: local

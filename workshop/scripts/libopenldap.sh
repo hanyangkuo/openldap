@@ -273,7 +273,8 @@ include: file:///opt/bitnami/openldap/etc/schema/core.ldif
 dn: cn=module,cn=config
 objectClass: olcModuleList
 cn: module
-olcModuleLoad: /opt/bitnami/openldap/lib/openldap/argon2.so
+olcModuleLoad: /opt/bitnami/openldap/lib/openldap/argon2.so m=65536 t=5 p=8
+olcModuleLoad: /opt/bitnami/openldap/lib/openldap/ppolicy.so
 
 #
 # Frontend settings

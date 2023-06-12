@@ -15,10 +15,11 @@ docker exec -it -u root openldap bash
 
 ## Build Custom Image
 
-docker build -t hykuo13104991/openldap:2.6.4-argon2 .
+docker build -t hykuo13104991/openldap:2.6.4-debian-11-r36 .
 
 rm -rf /opt/bitnami/openldap/etc/slapd.d/*
-slaptest -f /opt/bitnami/openldap/etc/slapd.conf -F /opt/bitnami/openldap/etc/slapd.d
+slaptest -f slapd.conf -F /opt/bitnami/openldap/etc/slapd.d
+slaptest -f slapd.conf -F /bitnami/openldap/slapd.d
 
 ## ldapsearch
 
@@ -75,3 +76,15 @@ adminpassword
 
 `ldappasswd -s welcome123 -W -D "cn=admin,dc=example,dc=com" -x "cn=adam,ou=users,dc=example,dc=com" -H ldap://127.0.0.1:1389`
 adminpassword
+
+```sh
+cat > "overlady-ppolicy.ldif" << EOF
+dn: olcOverlay={2}ppolicy,olcDatabase=mdb,cn=config
+objectClass: olcOverlayConfig
+objectClass: olcPPolicyConfig
+olcOverlay: {2}ppolicy
+olcPPolicyHashCleartext: TRUE
+EOF
+```
+
+ldapadd -Q -Y EXTERNAL -H ldapi:/// -f overlady-ppolicy.ldif
