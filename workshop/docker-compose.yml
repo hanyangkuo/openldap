@@ -18,6 +18,7 @@ services:
       - LDAP_ADMIN_PASSWORD=adminpassword
       - LDAP_USERS=user01,user02
       - LDAP_PASSWORDS=password1,password2
+      - LDAP_EXTRA_SCHEMAS=overlay-ppolicy, overlay-memberof, overlay-refint;
     networks:
       - my-network
     volumes:

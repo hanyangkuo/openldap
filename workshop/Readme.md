@@ -87,4 +87,13 @@ olcPPolicyHashCleartext: TRUE
 EOF
 ```
 
-ldapadd -Q -Y EXTERNAL -H ldapi:/// -f overlady-ppolicy.ldif
+cd /opt/bitnami/openldap/etc/schema
+ldapadd -Y EXTERNAL -H ldapi:/// -f overlay-ppolicy.ldif
+ldapadd -Y EXTERNAL -H ldapi:/// -f overlay-memberof.ldif
+ldapadd -Y EXTERNAL -H ldapi:/// -f overlay-refint.ldif
+
+ldapsearch -LLL -b 'cn=config' 'objectClass=olcOverlayConfig' '*'  -H ldapi:///
+
+docker-compose up -d
+
+ldapadd -Q -Y EXTERNAL -H ldapi:/// -f overlay-ppolicy.ldif

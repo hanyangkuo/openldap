@@ -275,7 +275,8 @@ objectClass: olcModuleList
 cn: module
 olcModuleLoad: /opt/bitnami/openldap/lib/openldap/argon2.so m=65536 t=5 p=8
 olcModuleLoad: /opt/bitnami/openldap/lib/openldap/ppolicy.so
-
+olcModuleLoad: /opt/bitnami/openldap/lib/openldap/memberof.so
+olcModuleLoad: /opt/bitnami/openldap/lib/openldap/refint.so
 #
 # Frontend settings
 #

@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILE - DO NOT EDIT!! Use ldapmodify.
-# CRC32 8852a6ea
+# CRC32 20b2e223
 dn: olcDatabase={2}mdb
 objectClass: olcDatabaseConfig
 objectClass: olcMdbConfig
@@ -10,12 +10,12 @@ olcDbIndex: objectClass eq,pres
 olcDbIndex: ou,cn,mail,surname,givenname eq,pres,sub
 olcDbMaxSize: 1073741824
 structuralObjectClass: olcMdbConfig
-entryUUID: a7064290-9d86-103d-880d-cbbc8c2dbe11
+entryUUID: fe57dd3e-9e57-103d-89c6-d3ad8a529376
 creatorsName: cn=config
-createTimestamp: 20230612160510Z
+createTimestamp: 20230613170342Z
 olcSuffix: dc=example,dc=com
 olcRootDN: cn=admin,dc=example,dc=com
-olcRootPW:: e1NTSEF9Znd6U3lBRXZqcm83VVQyaVZZWkd1ZjNYd09DUDNPcVY=
-entryCSN: 20230612160511.808302Z#000000#000#000000
+olcRootPW:: e1NTSEF9WEdZOEQzYW9hOUltNmVkWllidFZzSzYvaUhyZnVESW4=
+entryCSN: 20230613170343.155109Z#000000#000#000000
 modifiersName: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-modifyTimestamp: 20230612160511Z
+modifyTimestamp: 20230613170343Z

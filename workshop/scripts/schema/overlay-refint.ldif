@@ -1,0 +1,6 @@
+dn: olcOverlay=refint,olcDatabase={2}mdb,cn=config
+objectClass: olcConfig
+objectClass: olcOverlayConfig
+objectClass: olcMemberOf
+objectClass: top
+olcOverlay: refint
