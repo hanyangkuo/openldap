@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILE - DO NOT EDIT!! Use ldapmodify.
-# CRC32 c3fc5292
+# CRC32 2c511115
 dn: cn=module{0}
 objectClass: olcModuleList
 cn: module{0}
@@ -8,9 +8,9 @@ olcModuleLoad: {1}/opt/bitnami/openldap/lib/openldap/ppolicy.so
 olcModuleLoad: {2}/opt/bitnami/openldap/lib/openldap/memberof.so
 olcModuleLoad: {3}/opt/bitnami/openldap/lib/openldap/refint.so
 structuralObjectClass: olcModuleList
-entryUUID: fe52d1b8-9e57-103d-89c2-d3ad8a529376
+entryUUID: fd61c98e-9f20-103d-8500-2d216dbc4d5f
 creatorsName: cn=config
-createTimestamp: 20230613170342Z
-entryCSN: 20230613170342.053379Z#000000#000#000000
+createTimestamp: 20230614170229Z
+entryCSN: 20230614170229.316400Z#000000#000#000000
 modifiersName: cn=config
-modifyTimestamp: 20230613170342Z
+modifyTimestamp: 20230614170229Z

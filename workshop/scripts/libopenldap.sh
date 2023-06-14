@@ -320,6 +320,7 @@ olcMonitoring: FALSE
 olcDbDirectory:/bitnami/openldap/data
 olcDbIndex: objectClass eq,pres
 olcDbIndex: ou,cn,mail,surname,givenname eq,pres,sub
+
 EOF
 
 }
@@ -372,6 +373,21 @@ dn: olcDatabase={2}mdb,cn=config
 changeType: modify
 add: olcRootPW
 olcRootPW: $LDAP_ENCRYPTED_ADMIN_PASSWORD
+
+dn: olcDatabase={2}mdb,cn=config
+changeType: modify
+add: olcAccess
+olcAccess: to attrs=userPassword
+  by anonymous auth
+  by * none
+-
+add: olcAccess
+olcAccess: to attrs=memberOf 
+  by anonymous read
+  by * read
+-
+add: olcAccess
+olcAccess: to * by * read
 
 dn: olcDatabase={1}monitor,cn=config
 changetype: modify
