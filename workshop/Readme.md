@@ -94,6 +94,11 @@ ldapadd -Y EXTERNAL -H ldapi:/// -f overlay-refint.ldif
 
 ldapsearch -LLL -b 'cn=config' 'objectClass=olcOverlayConfig' '*'  -H ldapi:///
 
+ldapsearch -x -LLL -b 'ou=users,dc=example,dc=com' '(memberof=cn=Unit,ou=Unit,dc=example,dc=com)' -H ldapi:///
+
+ldapsearch -x -LLL -b 'ou=users,dc=example,dc=com' '(memberof=cn=readers,ou=users,dc=example,dc=com)' -H ldapi:///
+
 docker-compose up -d
+docker-compose -f .\docker-compose.yml up
 
 ldapadd -Q -Y EXTERNAL -H ldapi:/// -f overlay-ppolicy.ldif
